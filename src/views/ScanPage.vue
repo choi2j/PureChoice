@@ -1,9 +1,9 @@
 <template>
-  <ion-page>
-      <ion-content :fullscreen="true">
-          <div class="container"></div>
-      </ion-content>
-  </ion-page>
+    <ion-page>
+        <ion-content :fullscreen="true">
+            <div class="container"></div>
+        </ion-content>
+    </ion-page>
 </template>
 
 <script setup lang="ts">
