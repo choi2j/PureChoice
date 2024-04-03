@@ -3,6 +3,11 @@
     src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/KoddiUDOnGothic-Regular.woff") format("woff");
 }
 
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
 :root {
     --pure-black: #181818;
     --pure-white: #ffffff;
@@ -58,4 +63,11 @@ ion-button {
 
 ion-button a {
     color: var(--pure-gray-500);
+    height: 100%;
+    width: 100%;
+}
+
+ion-input {
+    font-size: 1.125rem;
+    font-weight: 400;
 }

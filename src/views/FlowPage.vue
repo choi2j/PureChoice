@@ -22,7 +22,7 @@
                     <p class="desc">퓨어초이스에서 시작해봐요!</p>
                 </div>
                 <ion-button expand="block" @click="next()">
-                    <a href="/login">로그인</a>
+                    <a href="/login">시작하기</a>
                 </ion-button>
             </div>
         </ion-content>
