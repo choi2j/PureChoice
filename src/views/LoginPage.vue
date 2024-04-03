@@ -16,8 +16,15 @@
                 <div class="contentC">
                     <img src="/yellowcheck.svg" alt="" />
                     <p class="desc">{{ name }}님 환영합니다.<br/>회원가입이 완료되었습니다.</p>
+                    <!--만약 유저가 이미 존재할 경우-->
+                    <!-- 
                     <ion-button expand="block">
                         <a href="/home">계속</a>
+                    </ion-button>
+                     -->
+                    <!--만약 유저가 존재하지 않을 경우-->
+                    <ion-button expand="block">
+                        <a href="/userinfo">계속</a>
                     </ion-button>
                 </div>
             </div>
@@ -44,7 +51,7 @@ export default defineComponent({
         let check = ref(0);
         let name = "";
         let phone = "";
-        let err = ref(1);
+        let err = ref(0);
         function checkName(name: any) {
             return name.match(/^[가-힣]{2,4}$/);
         }
