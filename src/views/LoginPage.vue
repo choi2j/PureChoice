@@ -21,7 +21,7 @@
                     <ion-button expand="block">
                         <a href="/home">계속</a>
                     </ion-button>
-                     -->
+                    -->
                     <!--만약 유저가 존재하지 않을 경우-->
                     <ion-button expand="block">
                         <a href="/userinfo">계속</a>
@@ -33,6 +33,7 @@
 </template>
 
 <script lang="ts">
+import { supabase } from '../supabase'
 import { IonContent, IonImg, IonPage, IonTitle, IonButton, IonInput, IonItem } from "@ionic/vue";
 import { defineComponent, ref } from "vue";
 
@@ -61,13 +62,24 @@ export default defineComponent({
         function valiName(ev: any) {
             const value = ev.target.value;
             console.log(checkName(value))
+            name = ev.detail.value;
         }
         function valiPhone(ev: any) {
             const value = ev.target.value;
-            console.log(checkPhone(value))
+            console.log(checkPhone(value));
+            phone = ev.detail.value;
         }
-        function checkAndNext() {
+        async function checkAndNext() {
+            let phoneNum = Number(phone);
+            console.log([name, phoneNum]);
+            console.log('asdf');
             if (!err.value) {
+                console.log([name, phoneNum]);
+                let error = await supabase
+                    .from('allergyList')
+                    .insert({name: name, phoneNumber: phoneNum})
+                    .throwOnError();
+                if (error) console.log(error);
                 check.value += 1;
             }
         }
